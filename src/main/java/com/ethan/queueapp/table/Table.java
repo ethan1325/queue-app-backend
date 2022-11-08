@@ -2,8 +2,6 @@ package com.ethan.queueapp.table;
 
 import java.io.Serializable;
 
-import javax.annotation.Generated;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 // import org.springframework.web.bind.annotation.GetMapping;
