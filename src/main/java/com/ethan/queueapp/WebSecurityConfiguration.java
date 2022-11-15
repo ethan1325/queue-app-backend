@@ -38,7 +38,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService);
-        provider.setPasswordEncoder(PasswordEncoderFactories.createDelegatingPasswordEncoder()); 
+        provider.setPasswordEncoder(PasswordEncoderFactories.createDelegatingPasswordEncoder());
         return provider;
     }
 
@@ -55,8 +55,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf()
-                .disable()
+        http.cors().and().csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/authenticate")
                 .permitAll()
