@@ -23,4 +23,14 @@ public class TableDao {
         return template.opsForHash().values(HASH_KEY);
     }
 
+    public String remove(Integer id){
+        template.opsForHash().delete(HASH_KEY, id);
+        return "{message: Table removed}";
+    }
+
+    public Table update(Table table){
+        template.opsForHash().put(HASH_KEY, table.getId(), table);
+        return table;
+    }
+
 }

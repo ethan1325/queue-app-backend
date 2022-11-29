@@ -16,7 +16,15 @@ public class TableService {
         return this.dao.save(table);
     }
 
+    public String removeTable(Integer id){
+        return this.dao.remove(id);
+    }
+
     public List<Table> getTables() {
         return dao.findAll();
+    }
+
+    public Table updateTable(Table table){
+        return this.dao.update(table);
     }
 }
